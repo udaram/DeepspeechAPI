@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Deepspeech API</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}"> -->
+	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+		type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link
+		href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+		rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+	<!-- <div id="container">
+		<div id="main_head" align="center" >FingerPrint Enhancement</div>
+	</div> -->
+	<!-- <nav class="navbar navbar-light bg-light" align="center">
+		<span class="navbar-brand mb-0 h1">FingerPrint Enhancement</span>
+	</nav>
+	<div id="upload" align="center">
+		<form action="/output" method="POST">
+  			<input type="file" id="myFile" name="filename">
+			  <input type="submit">
+		</form>
+	</div>
+
+	<footer id="footer" >
+  			<p align="center"><b>Made by:</b><br>	Hunarpreet Singh<br>Udaram Prajapat<br>Raghunandan Chauhan</p>	
+	</footer> -->
+	<div class="card text-center">
+		<div class="card-header">
+			Deepspeech API
+		</div>
+		<div class="card-body">
+			<form action="/output" method="POST" enctype=multipart/form-data>
+				<input type="file" accept="audio/*" name="audio" capture id="recorder">
+				<audio id="player" controls></audio>
+
+				<input type="submit" value=Upload>
+			</form>
+		</div>
+		<!-- <form action="/generate_tag" method="POST" enctype=multipart/form-data>
+			<input type=file name="img" accept="image/*" id="img" capture="environment" required>
+			<input type=submit value=Upload>
+		</form> -->
+
+		<div class="card-footer text-muted">
+			<p align="center"><b>Made by:</b><br>Udaram Prajapat</p>
+		</div>
+	</div>
+	<script>
+		const recorder = document.getElementById('recorder');
+		const player = document.getElementById('player');
+
+		recorder.addEventListener('change', function (e) {
+			const file = e.target.files[0];
+			const url = URL.createObjectURL(file);
+			// Do something with the audio file.
+			player.src = url;
+		});
+	</script>
+</body>
+
+</html>
