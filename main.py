@@ -5,7 +5,7 @@ import deepspeech
 import mp3_wav
 app = Flask(__name__)
 app.secret_key = 'my-secret-key'
-app.config['UPLOAD_FOLDER'] = "/home/udaram/Desktop/NLP/Project/static/img"
+app.config['UPLOAD_FOLDER'] = "GIVE PATH TO FOLDER"
 
 @app.route("/")
 def home():
